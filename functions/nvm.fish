@@ -2,7 +2,8 @@ set -g nvm_version 1.0.1
 
 function nvm -a cmd -d "Node.js version manager"
     set -q XDG_CONFIG_HOME; or set XDG_CONFIG_HOME ~/.config
-    set -g nvm_config $XDG_CONFIG_HOME/nvm
+    set -q NVM_DIR; or set NVM_DIR $XDG_CONFIG_HOME/nvm
+    set -g nvm_config $NVM_DIR
     set -g nvm_file .nvmrc
     set -q nvm_mirror; or set -g nvm_mirror "https://nodejs.org/dist"
 
